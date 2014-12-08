@@ -1,0 +1,67 @@
+#THELIA MODULE PAYBOX
+
+
+SUMMARY
+-------
+
+fr_FR:
+0.  Pré-requis
+1.  Installation
+2.  Utilisation
+3.  Intégration
+
+en_US:
+0.  Prerequisites
+1.  Install notes
+2.  How to use
+3.  Integration
+
+fr_FR
+-----
+
+### Pré-requis
+
+Quand vous passez un contrat avec Paybox, vous devez donner une "URL de retour" pour votre site.
+Cette adresse est formée de la manière suivante: http://www.votresite.com/paybox/validation
+Par exemple, pour le site thelia.net, l'adresse serait: http://www.thelia.net/paybox/validation
+
+### Installation
+
+Pour installer le module paybox, téléchargez l'archive et décompressez la dans <dossier de thelia>/local/modules
+
+### Utilisation
+
+Pour utiliser le module paybox, allez dans le back-office, onglet Modules, et activez le,
+puis cliquez sur "Configurer" sur la ligne du module. Renseignez vos informations de commerçant.
+
+### Intégration
+
+Ce module utilise deux pages:
+    - badresponse.html :  page d'erreur indiquant qu'il y a eut un soucis de communication avec les serveurs du paybox.
+    - gotobankservice.html : page qui envoie le formulaire de demande de paiement au paybox.
+Un exemple d'intégration pour le thème par default de Thelia est proposé.
+
+en_US
+-----
+
+### Prerequisites
+
+When you sign a contract with Paybox, you have to give them a "Return URL" for your website.
+This address is constructed like this: http://www.yoursite.com/paybox/validation
+For example, for the website thelia.net, the address would be: http://www.thelia.net/paybox/validation
+
+### Install notes
+
+To install the paybox module, download the archive uncompress it in <path to thelia>/local/modules
+
+### How to use
+
+To use this module, your first need to activate if in the Back-office, tab Modules,
+then click on "Configure" on the paybox module line. Enter your paybox account information and save.
+
+### Integration
+
+This module uses two pages:
+    - badresponse.html : Error page indicating that a problem has been detected while connecting to paybox servers.
+    - gotobankservice.html : Page that send the form to do a payment resquest with paybox.
+An integration example is available for the default theme of Thelia.

@@ -1,0 +1,72 @@
+<div class="row">
+    <!-- Errors -->
+    {loop name="checkrights" type="paybox.check.rights"}
+    <div class="alert alert-danger">
+        <p>{$ERRMES}  {$ERRFILE} | {intl l="Please change the access rights"}.</p>
+    </div>
+    {/loop}
+</div>
+{elseloop rel="checkrights"}
+<h2>{intl d="paybox" l="Configuration Paybox"}</h2>
+<div class="form-container general-block-decorator">
+{form name="paybox.configure"} 
+	<form action="{url path="/admin/module/paybox/saveconfig"}" method="POST" {form_enctype form=$form}>
+		{form_hidden_fields form=$form}
+
+        {form_field form=$form field="PBX_SITE"}
+        <div class="form-group {if $error}has-error{/if}">
+            <label for="{$label_attr.for}" class="control-label">{$label} :</label>
+            <input type="text" id="{$label_attr.for}" name="{$name}" value="{$value}" placeholder="{intl l='SITE'}" class="form-control" />
+        </div>
+        {/form_field}
+		
+        {form_field form=$form field="PBX_RANG"}
+        <div class="form-group {if $error}has-error{/if}">
+            <label for="{$label_attr.for}" class="control-label">{$label} :</label>
+            <input type="text" id="{$label_attr.for}" name="{$name}" value="{$value}" placeholder="{intl l='RANG'}" class="form-control" />
+        </div>
+        {/form_field}
+		
+        {form_field form=$form field="PBX_IDENTIFIANT"}
+        <div class="form-group {if $error}has-error{/if}">
+            <label for="{$label_attr.for}" class="control-label">{$label} :</label>
+            <input type="text" id="{$label_attr.for}" name="{$name}" value="{$value}" placeholder="{intl l='IDENTIFIANT'}" class="form-control" />
+        </div>
+        {/form_field}
+		
+        {form_field form=$form field="PBX_SERVER"}
+        <div class="form-group {if $error}has-error{/if}">
+            <label for="{$label_attr.for}" class="control-label">{$label} :</label>
+            <input type="text" id="{$label_attr.for}" name="{$name}" value="{$value}" placeholder="{intl l='SERVEUR'}" class="form-control" aria-describedby="serverHelpBlock"/>
+            <span id="serverHelpBlock" class="help-block">Pré-production : https://preprod-tpeweb.paybox.com/cgi<br/>Production : https://tpeweb.paybox.com/cgi</span>
+        </div>
+        {/form_field}
+		
+        {form_field form=$form field="PBX_PAGE"}
+        <div class="form-group {if $error}has-error{/if}">
+            <label for="{$label_attr.for}" class="control-label">{$label} :</label>
+            <input type="text" id="{$label_attr.for}" name="{$name}" value="{$value}" placeholder="{intl l='PAGE'}" class="form-control" />
+        </div>
+        {/form_field}
+		
+        {form_field form=$form field="PBX_DEVISE"}
+        <div class="form-group {if $error}has-error{/if}">
+            <label for="{$label_attr.for}" class="control-label">{$label} :</label>
+            <input type="text" id="{$label_attr.for}" name="{$name}" value="{$value}" placeholder="{intl l='DEVISE'}" class="form-control" />
+        </div>
+        {/form_field}
+		
+        {form_field form=$form field="PBX_KEY"}
+        <div class="form-group {if $error}has-error{/if}">
+            <label for="{$label_attr.for}" class="control-label">{$label} :</label>
+            <input type="text" id="{$label_attr.for}" name="{$name}" value="{$value}" placeholder="{intl l='PRIVATE KEY'}" class="form-control" />
+        </div>
+        {/form_field}
+		
+        <div class="form-group">
+                <button type="submit" name="save_mode" value="stay" class="form-submit-button btn btn-sm btn-default btn-success" title="{intl l="Save"}">{intl l="Save"} <span class="glyphicon glyphicon-ok"></span></button>
+        </div>
+	</form>
+{/form}
+</div>
+{/elseloop}

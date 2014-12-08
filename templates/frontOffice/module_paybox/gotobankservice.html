@@ -1,0 +1,38 @@
+<html>
+<body>
+<div class="panel">
+
+    <div class="panel-heading clearfix">
+        {intl l="You're going to be redirected to our bank paiement service"}.
+    </div>
+    <!-- PAYMENT FORM TEMPLATE -->
+    <div class="panel-body">
+        <p>
+            {intl l="If redirection doesn't append, please click the button below"}
+        </p>
+        <form method="POST" action="{$url_bank}" id="PaymentRequest">
+            <input type="hidden" name="PBX_SITE" value="{$PBX_SITE}">
+            <input type="hidden" name="PBX_RANG" value="{$PBX_RANG}">
+            <input type="hidden" name="PBX_IDENTIFIANT" value="{$PBX_IDENTIFIANT}">
+            <input type="hidden" name="PBX_TOTAL" value="{$montant}">
+            <input type="hidden" name="PBX_DEVISE" value="{$PBX_DEVISE}">
+            <input type="hidden" name="PBX_CMD" value="{$reference}">
+            <input type="hidden" name="PBX_PORTEUR" value="{$mail}">
+            <input type="hidden" name="PBX_RETOUR" value="{$PBX_RETOUR}">
+            <input type="hidden" name="PBX_HASH" value="{$PBX_HASH}">
+            <input type="hidden" name="PBX_TIME" value="{$date}">
+            <input type="hidden" name="PBX_EFFECTUE" value="{$url_retour_ok}">
+            <input type="hidden" name="PBX_REPONDRE_A" value="{$url_retour}">
+            <input type="hidden" name="PBX_REFUSE" value="{$url_retour_err}">
+            <input type="hidden" name="PBX_HMAC" value="{$MAC}">
+            <input type="submit" value="{intl l="Go to paiement service"}"/>
+          </form>
+        
+    </div>
+</div>
+<!-- FIN FORMULAIRE TYPE DE PAIEMENT / END PAYMENT FORM TEMPLATE -->
+<script type="text/javascript">
+    document.forms['PaymentRequest'].submit();
+</script>
+</body>
+</html>
